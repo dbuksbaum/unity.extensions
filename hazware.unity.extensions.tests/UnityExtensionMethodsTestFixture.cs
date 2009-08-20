@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using MbUnit.Framework;
 using Microsoft.Practices.Unity;
 
 namespace hazware.unity.extensions.tests
 {
   [TestFixture]
-  public class TypeTrackingTestFixture
+  public class UnityExtensionMethodsTestFixture
   {
     #region Fields
     private IUnityContainer _container = null;
@@ -35,13 +35,13 @@ namespace hazware.unity.extensions.tests
     [Test]
     public void TryResolveOfUnknownType()
     {
-      ITest obj = _container.Configure<TypeTrackingExtension>().TryResolve<ITest>();
+      ITest obj = _container.TryResolve<ITest>();
       Assert.IsNull(obj);
     }
     [Test]
     public void TryResolveOfUnknownTypeByName()
     {
-      ITest obj = _container.Configure<TypeTrackingExtension>().TryResolve<ITest>("name");
+      ITest obj = _container.TryResolve<ITest>("name");
       Assert.IsNull(obj);
     }
     #endregion
@@ -52,14 +52,14 @@ namespace hazware.unity.extensions.tests
     {
       _container.RegisterType<ITest, TestClass>();
       Assert.IsNotNull(_container.Resolve<ITest>());
-      ITest obj = _container.Configure<TypeTrackingExtension>().TryResolve<ITest>();
+      ITest obj = _container.TryResolve<ITest>();
       Assert.IsNotNull(obj);
     }
     [Test]
     public void TryResolveOfRegisteredTypeByName()
     {
       _container.RegisterType<ITest, TestClass>("name");
-      ITest obj = _container.Configure<TypeTrackingExtension>().TryResolve<ITest>("name");
+      ITest obj = _container.TryResolve<ITest>("name");
       Assert.IsNotNull(obj);
     }
     #endregion
@@ -70,7 +70,7 @@ namespace hazware.unity.extensions.tests
     {
       TestClass src = new TestClass();
       src.Data = "hello world";
-      ITest obj = _container.Configure<TypeTrackingExtension>().TryResolve<ITest>(src);
+      ITest obj = _container.TryResolve<ITest>(src);
       Assert.IsNotNull(obj);
       Assert.AreSame(src, obj);
     }
@@ -79,7 +79,7 @@ namespace hazware.unity.extensions.tests
     {
       TestClass src = new TestClass();
       src.Data = "hello world";
-      ITest obj = _container.Configure<TypeTrackingExtension>().TryResolve<ITest>("name", src);
+      ITest obj = _container.TryResolve<ITest>("name", src);
       Assert.IsNotNull(obj);
       Assert.AreSame(src, obj);
     }
@@ -89,26 +89,26 @@ namespace hazware.unity.extensions.tests
     [Test]
     public void CanResolveType()
     {
-      Assert.IsFalse(_container.Configure<TypeTrackingExtension>().CanResolve<ITest>());
+      Assert.IsFalse(_container.CanResolve<ITest>());
       _container.RegisterType<ITest, TestClass>();
-      Assert.IsTrue(_container.Configure<TypeTrackingExtension>().CanResolve<ITest>());
+      Assert.IsTrue(_container.CanResolve<ITest>());
     }
     [Test]
     public void CanResolveByName()
     {
-      Assert.IsFalse(_container.Configure<TypeTrackingExtension>().CanResolve<ITest>("name"));
+      Assert.IsFalse(_container.CanResolve<ITest>("name"));
       _container.RegisterType<ITest, TestClass>("name");
-      Assert.IsTrue(_container.Configure<TypeTrackingExtension>().CanResolve<ITest>("name"));
+      Assert.IsTrue(_container.CanResolve<ITest>("name"));
     }
     #endregion
 
-    #region ImplicitDefaultResolveAll
+    #region ImplicitDefaultResolveAllToEnumerable
     [Test]
-    public void ImplicitDefaultResolveAllDefaultWithDefaultTypeOnly()
+    public void ImplicitDefaultResolveAllToEnumerableDefaultWithDefaultTypeOnly()
     {
       _container.RegisterType<ITest, TestClass>();
       int count = 0;
-      foreach (var item in _container.Configure<TypeTrackingExtension>().ResolveAll<ITest>())
+      foreach (var item in _container.ResolveAllToEnumerable<ITest>())
       {
         Assert.IsNotNull(item);
         ++count;
@@ -116,11 +116,11 @@ namespace hazware.unity.extensions.tests
       Assert.AreEqual(1, count);
     }
     [Test]
-    public void ImplicitDefaultResolveAllDefaultWithNamedTypeOnly()
+    public void ImplicitDefaultResolveAllToEnumerableDefaultWithNamedTypeOnly()
     {
       _container.RegisterType<ITest, TestClass>("name");
       int count = 0;
-      foreach (var item in _container.Configure<TypeTrackingExtension>().ResolveAll<ITest>())
+      foreach (var item in _container.ResolveAllToEnumerable<ITest>())
       {
         Assert.IsNotNull(item);
         ++count;
@@ -128,12 +128,12 @@ namespace hazware.unity.extensions.tests
       Assert.AreEqual(1, count);
     }
     [Test]
-    public void ImplicitDefaultResolveAllDefaultWithTwoTypes()
+    public void ImplicitDefaultResolveAllToEnumerableDefaultWithTwoTypes()
     {
       _container.RegisterType<ITest, TestClass>();
       _container.RegisterType<ITest, AnotherTestClass>("name");
       int count = 0;
-      foreach (var item in _container.Configure<TypeTrackingExtension>().ResolveAll<ITest>())
+      foreach (var item in _container.ResolveAllToEnumerable<ITest>())
       {
         Assert.IsNotNull(item);
         ++count;
@@ -141,10 +141,10 @@ namespace hazware.unity.extensions.tests
       Assert.AreEqual(2, count);
     }
     [Test]
-    public void ImplicitDefaultResolveAllDefaultWithNoTypes()
+    public void ImplicitDefaultResolveAllToEnumerableDefaultWithNoTypes()
     {
       int count = 0;
-      foreach (var item in _container.Configure<TypeTrackingExtension>().ResolveAll<ITest>())
+      foreach (var item in _container.ResolveAllToEnumerable<ITest>())
       {
         Assert.IsNotNull(item);
         ++count;
@@ -153,15 +153,15 @@ namespace hazware.unity.extensions.tests
     }
     #endregion
 
-    #region ExplicitDefaultResolveAll
+    #region ExplicitDefaultResolveAllToEnumerable
     [Test]
-    public void ExplicitDefaultResolveAllDefaultWithDefaultTypeOnly()
+    public void ExplicitDefaultResolveAllToEnumerableDefaultWithDefaultTypeOnly()
     {
       _container.RegisterType<ITest, TestClass>();
 
       //  test with default
       int count = 0;
-      foreach (var item in _container.Configure<TypeTrackingExtension>().ResolveAll<ITest>(true))
+      foreach (var item in _container.ResolveAllToEnumerable<ITest>(true))
       {
         Assert.IsNotNull(item);
         ++count;
@@ -170,7 +170,7 @@ namespace hazware.unity.extensions.tests
 
       //  test without default
       count = 0;
-      foreach (var item in _container.Configure<TypeTrackingExtension>().ResolveAll<ITest>(false))
+      foreach (var item in _container.ResolveAllToEnumerable<ITest>(false))
       {
         Assert.IsNotNull(item);
         ++count;
@@ -178,12 +178,12 @@ namespace hazware.unity.extensions.tests
       Assert.AreEqual(0, count);
     }
     [Test]
-    public void ExplicitDefaultResolveAllDefaultWithNamedTypeOnly()
+    public void ExplicitDefaultResolveAllToEnumerableDefaultWithNamedTypeOnly()
     {
       _container.RegisterType<ITest, TestClass>("name");
       //  test with default
       int count = 0;
-      foreach (var item in _container.Configure<TypeTrackingExtension>().ResolveAll<ITest>(true))
+      foreach (var item in _container.ResolveAllToEnumerable<ITest>(true))
       {
         Assert.IsNotNull(item);
         ++count;
@@ -192,7 +192,7 @@ namespace hazware.unity.extensions.tests
 
       //  test without default
       count = 0;
-      foreach (var item in _container.Configure<TypeTrackingExtension>().ResolveAll<ITest>(false))
+      foreach (var item in _container.ResolveAllToEnumerable<ITest>(false))
       {
         Assert.IsNotNull(item);
         ++count;
@@ -200,13 +200,13 @@ namespace hazware.unity.extensions.tests
       Assert.AreEqual(1, count);
     }
     [Test]
-    public void ExplicitDefaultResolveAllDefaultWithTwoTypes()
+    public void ExplicitDefaultResolveAllToEnumerableDefaultWithTwoTypes()
     {
       _container.RegisterType<ITest, TestClass>();
       _container.RegisterType<ITest, AnotherTestClass>("name");
       //  test with default
       int count = 0;
-      foreach (var item in _container.Configure<TypeTrackingExtension>().ResolveAll<ITest>(true))
+      foreach (var item in _container.ResolveAllToEnumerable<ITest>(true))
       {
         Assert.IsNotNull(item);
         ++count;
@@ -215,7 +215,7 @@ namespace hazware.unity.extensions.tests
 
       //  test without default
       count = 0;
-      foreach (var item in _container.Configure<TypeTrackingExtension>().ResolveAll<ITest>(false))
+      foreach (var item in _container.ResolveAllToEnumerable<ITest>(false))
       {
         Assert.IsNotNull(item);
         ++count;
@@ -223,10 +223,10 @@ namespace hazware.unity.extensions.tests
       Assert.AreEqual(1, count);
     }
     [Test]
-    public void ExplicitDefaultResolveAllDefaultWithNoTypes()
+    public void ExplicitDefaultResolveAllToEnumerableDefaultWithNoTypes()
     { //  test with default
       int count = 0;
-      foreach (var item in _container.Configure<TypeTrackingExtension>().ResolveAll<ITest>(true))
+      foreach (var item in _container.ResolveAllToEnumerable<ITest>(true))
       {
         Assert.IsNotNull(item);
         ++count;
@@ -235,7 +235,7 @@ namespace hazware.unity.extensions.tests
 
       //  test with default
       count = 0;
-      foreach (var item in _container.Configure<TypeTrackingExtension>().ResolveAll<ITest>(false))
+      foreach (var item in _container.ResolveAllToEnumerable<ITest>(false))
       {
         Assert.IsNotNull(item);
         ++count;
@@ -250,7 +250,7 @@ namespace hazware.unity.extensions.tests
     {
       _container.RegisterType<ITest, TestClass>();
       int count = 0;
-      foreach (var item in _container.Configure<TypeTrackingExtension>().ResolveAllToArray<ITest>())
+      foreach (var item in _container.ResolveAllToArray<ITest>())
       {
         Assert.IsNotNull(item);
         ++count;
@@ -262,7 +262,7 @@ namespace hazware.unity.extensions.tests
     {
       _container.RegisterType<ITest, TestClass>("name");
       int count = 0;
-      foreach (var item in _container.Configure<TypeTrackingExtension>().ResolveAllToArray<ITest>())
+      foreach (var item in _container.ResolveAllToArray<ITest>())
       {
         Assert.IsNotNull(item);
         ++count;
@@ -275,7 +275,7 @@ namespace hazware.unity.extensions.tests
       _container.RegisterType<ITest, TestClass>();
       _container.RegisterType<ITest, AnotherTestClass>("name");
       int count = 0;
-      foreach (var item in _container.Configure<TypeTrackingExtension>().ResolveAllToArray<ITest>())
+      foreach (var item in _container.ResolveAllToArray<ITest>())
       {
         Assert.IsNotNull(item);
         ++count;
@@ -286,7 +286,7 @@ namespace hazware.unity.extensions.tests
     public void ImplicitDefaultResolveAllToArrayDefaultWithNoTypes()
     {
       int count = 0;
-      foreach (var item in _container.Configure<TypeTrackingExtension>().ResolveAllToArray<ITest>())
+      foreach (var item in _container.ResolveAllToArray<ITest>())
       {
         Assert.IsNotNull(item);
         ++count;
@@ -302,12 +302,12 @@ namespace hazware.unity.extensions.tests
       _container.RegisterType<ITest, TestClass>();
 
       //  test with default
-      var objs = _container.Configure<TypeTrackingExtension>().ResolveAllToArray<ITest>(true);
+      var objs = _container.ResolveAllToArray<ITest>(true);
       Assert.IsNotNull(objs);
       Assert.AreEqual(1, objs.Length);
 
       //  test without default
-      objs = _container.Configure<TypeTrackingExtension>().ResolveAllToArray<ITest>(false);
+      objs = _container.ResolveAllToArray<ITest>(false);
       Assert.IsNotNull(objs);
       Assert.AreEqual(0, objs.Length);
     }
@@ -317,12 +317,12 @@ namespace hazware.unity.extensions.tests
       _container.RegisterType<ITest, TestClass>("name");
 
       //  test with default
-      var objs = _container.Configure<TypeTrackingExtension>().ResolveAllToArray<ITest>(true);
+      var objs = _container.ResolveAllToArray<ITest>(true);
       Assert.IsNotNull(objs);
       Assert.AreEqual(1, objs.Length);
 
       //  test without default
-      objs = _container.Configure<TypeTrackingExtension>().ResolveAllToArray<ITest>(false);
+      objs = _container.ResolveAllToArray<ITest>(false);
       Assert.IsNotNull(objs);
       Assert.AreEqual(1, objs.Length);
     }
@@ -333,12 +333,12 @@ namespace hazware.unity.extensions.tests
       _container.RegisterType<ITest, AnotherTestClass>("name");
 
       //  test with default
-      var objs = _container.Configure<TypeTrackingExtension>().ResolveAllToArray<ITest>(true);
+      var objs = _container.ResolveAllToArray<ITest>(true);
       Assert.IsNotNull(objs);
       Assert.AreEqual(2, objs.Length);
 
       //  test without default
-      objs = _container.Configure<TypeTrackingExtension>().ResolveAllToArray<ITest>(false);
+      objs = _container.ResolveAllToArray<ITest>(false);
       Assert.IsNotNull(objs);
       Assert.AreEqual(1, objs.Length);
     }
@@ -346,12 +346,12 @@ namespace hazware.unity.extensions.tests
     public void ExplicitDefaultResolveAllToArrayDefaultWithNoTypes()
     {
       //  test with default
-      var objs = _container.Configure<TypeTrackingExtension>().ResolveAllToArray<ITest>(true);
+      var objs = _container.ResolveAllToArray<ITest>(true);
       Assert.IsNotNull(objs);
       Assert.AreEqual(0, objs.Length);
 
       //  test without default
-      objs = _container.Configure<TypeTrackingExtension>().ResolveAllToArray<ITest>(false);
+      objs = _container.ResolveAllToArray<ITest>(false);
       Assert.IsNotNull(objs);
       Assert.AreEqual(0, objs.Length);
     }

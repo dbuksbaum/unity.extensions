@@ -66,7 +66,7 @@ namespace hazware.unity.extensions
     /// <summary>
     /// Determines whether this type can be resolved as the default.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="T">The type to test for resolution</typeparam>
     /// <returns>
     ///     <c>true</c> if this instance can resolve; otherwise, <c>false</c>.
     /// </returns>
@@ -77,7 +77,7 @@ namespace hazware.unity.extensions
     /// <summary>
     /// Determines whether this type can be resolved with the specified name.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="T">The type to test for resolution</typeparam>
     /// <param name="name">The name.</param>
     /// <returns>
     ///     <c>true</c> if this instance can be resolved with the specified name; otherwise, <c>false</c>.
@@ -92,9 +92,9 @@ namespace hazware.unity.extensions
       return false;
     }
     /// <summary>
-    /// Determines whether this instance can be resolved at all.
+    /// Determines whether this instance can be resolved at all with or without a name.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="T">The type to test for resolution</typeparam>
     /// <returns>
     ///     <c>true</c> if this instance can be resolved at all; otherwise, <c>false</c>.
     /// </returns>
@@ -125,7 +125,7 @@ namespace hazware.unity.extensions
       return TryResolve<T>(name, default(T));
     }
     /// <summary>
-    /// Tries to resolve the type, returning null if not found.
+    /// Tries to resolve the type, returning the passed in defaultValue if not found.
     /// </summary>
     /// <typeparam name="T">The type to try and resolve.</typeparam>
     /// <param name="defaultValue">The default value to return if type not found.</param>
@@ -137,7 +137,7 @@ namespace hazware.unity.extensions
       return Container.Resolve<T>();
     }
     /// <summary>
-    /// Tries to resolve the type with the specified of name, returning null if not found.
+    /// Tries to resolve the type with the specified of name, returning the passed in defaultValue if not found.
     /// </summary>
     /// <typeparam name="T">The type to try and resolve.</typeparam>
     /// <param name="name">The name associated with the type.</param>
