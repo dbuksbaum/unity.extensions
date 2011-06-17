@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E378C9BE-E0EF-4A49-AB81-0907752C59D4}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{F0539843-7FCC-4B46-8A16-AF8163E8204E}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SampleApp</RootNamespace>
-    <AssemblyName>SampleApp</AssemblyName>
+    <RootNamespace>Hazware.Unity.TypeTracking</RootNamespace>
+    <AssemblyName>Hazware.Unity.TypeTracking</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
@@ -69,14 +69,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Hazware.Unity.TypeTracking\Hazware.Unity.TypeTracking.csproj">
-      <Project>{F0539843-7FCC-4B46-8A16-AF8163E8204E}</Project>
-      <Name>Hazware.Unity.TypeTracking</Name>
-    </ProjectReference>
+    <Compile Include="TypeTrackingExtension.cs" />
+    <Compile Include="UnityExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

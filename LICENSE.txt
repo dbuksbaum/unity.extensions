@@ -1,4 +1,4 @@
-hazware unity extensions is intended to be used in both open-source and commercial environments. To allow 
+Hazware.Unity.TypeTracking is intended to be used in both open-source and commercial environments. To allow 
 its use in as many situations as possible, hazware unity extensions is licensed under the Apache License, 
 Version 2.0.
 

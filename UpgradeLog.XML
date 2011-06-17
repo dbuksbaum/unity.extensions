@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="hazware-unity-extensions">
+</Property><Property Name="Solution File" Value="C:\Users\David\Documents\My Dropbox\Development\GitHub\Unity.Extensions\hazware-unity-extensions.sln">
+</Property><Property Name="Date" Value="Thursday, June 16, 2011">
+</Property><Property Name="Time" Value="21:53 PM">
+</Property></Properties><Event ErrorLevel="0" Project="hazware.unity.extensions" Source="hazware.unity.extensions\hazware.unity.extensions.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="hazware.unity.extensions" Source="hazware.unity.extensions\hazware.unity.extensions.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="hazware.unity.extensions.tests" Source="hazware.unity.extensions.tests\hazware.unity.extensions.tests.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="hazware.unity.extensions.tests" Source="hazware.unity.extensions.tests\hazware.unity.extensions.tests.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="SampleApp" Source="SampleApp\SampleApp.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="SampleApp" Source="SampleApp\SampleApp.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="hazware-unity-extensions.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="hazware-unity-extensions.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="hazware.unity.extensions" Source="hazware.unity.extensions\hazware.unity.extensions.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="hazware.unity.extensions.tests" Source="hazware.unity.extensions.tests\hazware.unity.extensions.tests.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="SampleApp" Source="SampleApp\SampleApp.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

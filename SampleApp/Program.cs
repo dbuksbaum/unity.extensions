@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
+using Hazware.Unity.TypeTracking;
 using Microsoft.Practices.Unity;
-using hazware.unity.extensions;
 
 namespace SampleApp
 {
@@ -68,6 +68,8 @@ namespace SampleApp
       Console.WriteLine("ResolveAllToArray<IFoo>().Length == {0}", container.ResolveAllToArray<IFoo>().Length);
       Console.WriteLine("ResolveAllToArray<IFoo>(false).Length == {0}", container.ResolveAllToArray<IFoo>(false).Length);
       Console.WriteLine("ResolveAllToArray<IBar>().Length == {0}", container.ResolveAllToArray<IBar>().Length);
+
+      Console.ReadLine();
     }
   }
 }

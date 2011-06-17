@@ -3,9 +3,13 @@ obj
 build
 dist
 *.suo
-*resharper*
 *.user
 *.cache
 *.bak
 *.pdb
 desktop.ini
+Old/
+_ReSharper.*
+_UpgradeReport_Files
+UpgradeLog.xml
+# shared files taken from elsewhere in the environment
