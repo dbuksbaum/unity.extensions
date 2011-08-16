@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Hazware.Unity.TypeTracking</id>
+    <version>2.0</version>
+    <title>Hazware.Unity.TypeTracking</title>
+    <authors>David Buksbaum</authors>
+    <owners />
+    <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
+    <projectUrl>http://buksbaum.us/2011/06/16/introducing-hazware-unity-typetracking/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Addition of Type Tracking functionality, and some helper extension methods to Unity Inversion of Control Container.</description>
+    <summary>Addition of Type Tracking functionality, and some helper extension methods to Unity Inversion of Control Container. Source code is available at https://github.com/dbuksbaum/unity.extensions</summary>
+    <tags>Unity IoC</tags>
+    <dependencies>
+      <dependency id="Unity" version="2.1.505.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="lib\net35\Hazware.Unity.TypeTracking.dll" target="lib\net35\Hazware.Unity.TypeTracking.dll" />
+    <file src="lib\net40\Hazware.Unity.TypeTracking.dll" target="lib\net40\Hazware.Unity.TypeTracking.dll" />
+    <file src="lib\sl4\Hazware.Unity.TypeTracking.dll" target="lib\sl4\Hazware.Unity.TypeTracking.dll" />
+  </files>
+</package>

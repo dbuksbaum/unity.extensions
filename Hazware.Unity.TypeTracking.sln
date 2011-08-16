@@ -1,20 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hazware.Unity.TypeTracking", "Hazware.Unity.TypeTracking\Hazware.Unity.TypeTracking.csproj", "{F0539843-7FCC-4B46-8A16-AF8163E8204E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hazware.Unity.TypeTracking-NET4", "src\Hazware.Unity.TypeTracking-NET4\Hazware.Unity.TypeTracking-NET4.csproj", "{23391687-F603-4AF2-9AED-75D54000A19D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hazware.Unity.TypeTracking.Tests", "Hazware.Unity.TypeTracking.Tests\Hazware.Unity.TypeTracking.Tests.csproj", "{62CC4158-D321-4F8C-BDC3-CF47AB63631F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hazware.Unity.TypeTracking-NET35", "src\Hazware.Unity.TypeTracking-NET35\Hazware.Unity.TypeTracking-NET35.csproj", "{F0539843-7FCC-4B46-8A16-AF8163E8204E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp", "SampleApp\SampleApp.csproj", "{E378C9BE-E0EF-4A49-AB81-0907752C59D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hazware.Unity.TypeTracking-SL4", "src\Hazware.Unity.TypeTracking-SL4\Hazware.Unity.TypeTracking-SL4.csproj", "{BCA4F6ED-46B5-4D68-B0C1-D9A22100FD5F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A027F996-8510-46B6-A6D8-F67431DA08B7}"
-	ProjectSection(SolutionItems) = preProject
-		History.txt = History.txt
-	EndProjectSection
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{85E3B9C2-827F-4CCE-8F7B-D976E39138FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hazware.Unity.TypeTracking-v40", "Hazware.Unity.TypeTracking-v40\Hazware.Unity.TypeTracking-v40.csproj", "{23391687-F603-4AF2-9AED-75D54000A19D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FEF72336-7AEE-4BD4-851A-242597BFDB2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hazware.Unity.TypeTracking.Tests-v40", "Hazware.Unity.TypeTracking.Tests-v40\Hazware.Unity.TypeTracking.Tests-v40.csproj", "{A0254E43-541A-4026-8953-C5D867B14C91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hazware.Unity.TypeTracking.Tests-NET35", "tests\Hazware.Unity.TypeTracking.Tests-NET35\Hazware.Unity.TypeTracking.Tests-NET35.csproj", "{62CC4158-D321-4F8C-BDC3-CF47AB63631F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hazware.Unity.TypeTracking.Tests-NET4", "tests\Hazware.Unity.TypeTracking.Tests-NET4\Hazware.Unity.TypeTracking.Tests-NET4.csproj", "{A0254E43-541A-4026-8953-C5D867B14C91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,22 +21,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F0539843-7FCC-4B46-8A16-AF8163E8204E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F0539843-7FCC-4B46-8A16-AF8163E8204E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F0539843-7FCC-4B46-8A16-AF8163E8204E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F0539843-7FCC-4B46-8A16-AF8163E8204E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{62CC4158-D321-4F8C-BDC3-CF47AB63631F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{62CC4158-D321-4F8C-BDC3-CF47AB63631F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{62CC4158-D321-4F8C-BDC3-CF47AB63631F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{62CC4158-D321-4F8C-BDC3-CF47AB63631F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E378C9BE-E0EF-4A49-AB81-0907752C59D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E378C9BE-E0EF-4A49-AB81-0907752C59D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E378C9BE-E0EF-4A49-AB81-0907752C59D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E378C9BE-E0EF-4A49-AB81-0907752C59D4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{23391687-F603-4AF2-9AED-75D54000A19D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{23391687-F603-4AF2-9AED-75D54000A19D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23391687-F603-4AF2-9AED-75D54000A19D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23391687-F603-4AF2-9AED-75D54000A19D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0539843-7FCC-4B46-8A16-AF8163E8204E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0539843-7FCC-4B46-8A16-AF8163E8204E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0539843-7FCC-4B46-8A16-AF8163E8204E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0539843-7FCC-4B46-8A16-AF8163E8204E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCA4F6ED-46B5-4D68-B0C1-D9A22100FD5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCA4F6ED-46B5-4D68-B0C1-D9A22100FD5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCA4F6ED-46B5-4D68-B0C1-D9A22100FD5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCA4F6ED-46B5-4D68-B0C1-D9A22100FD5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62CC4158-D321-4F8C-BDC3-CF47AB63631F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62CC4158-D321-4F8C-BDC3-CF47AB63631F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62CC4158-D321-4F8C-BDC3-CF47AB63631F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62CC4158-D321-4F8C-BDC3-CF47AB63631F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A0254E43-541A-4026-8953-C5D867B14C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A0254E43-541A-4026-8953-C5D867B14C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0254E43-541A-4026-8953-C5D867B14C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +44,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F0539843-7FCC-4B46-8A16-AF8163E8204E} = {85E3B9C2-827F-4CCE-8F7B-D976E39138FA}
+		{BCA4F6ED-46B5-4D68-B0C1-D9A22100FD5F} = {85E3B9C2-827F-4CCE-8F7B-D976E39138FA}
+		{23391687-F603-4AF2-9AED-75D54000A19D} = {85E3B9C2-827F-4CCE-8F7B-D976E39138FA}
+		{62CC4158-D321-4F8C-BDC3-CF47AB63631F} = {FEF72336-7AEE-4BD4-851A-242597BFDB2A}
+		{A0254E43-541A-4026-8953-C5D867B14C91} = {FEF72336-7AEE-4BD4-851A-242597BFDB2A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35

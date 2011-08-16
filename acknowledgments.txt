@@ -1,0 +1,4 @@
+The Hazware.Unity.TypeTracking project is making use of the following OSS projects:
+
+* NUnit (http://nunit.org/)
+* Microsoft Unity (http://msdn.microsoft.com/unity) - under the Microsoft Public License: http://www.opensource.org/licenses/ms-pl
