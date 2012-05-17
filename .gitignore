@@ -30,6 +30,7 @@ Old
 release
 Release
 TestResults
+packages
 # Web publish log #
 ###################
 *.Publish.xml
@@ -65,3 +66,6 @@ desktop.ini
 *.bak
 *.docstates
 *.user
+# we need nuget config #
+########################
+!repositories.config
