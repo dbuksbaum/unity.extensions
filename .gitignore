@@ -69,3 +69,4 @@ desktop.ini
 # we need nuget config #
 ########################
 !repositories.config
+!nuget.exe
