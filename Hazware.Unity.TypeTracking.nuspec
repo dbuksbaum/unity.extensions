@@ -7,7 +7,7 @@
     <authors>David Buksbaum</authors>
     <owners />
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
-    <projectUrl>http://buksbaum.us/2011/06/16/introducing-hazware-unity-typetracking/</projectUrl>
+    <projectUrl>http://buksbaum.us/things-i-did/hazware-unity-typetracking/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Addition of Type Tracking functionality, and some helper extension methods to Unity Inversion of Control Container.</description>
     <summary>Addition of Type Tracking functionality, and some helper extension methods to Unity Inversion of Control Container. Source code is available at https://github.com/dbuksbaum/unity.extensions</summary>

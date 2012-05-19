@@ -3,8 +3,11 @@ Unity.Extensions
 
 This is the repository for the Hazware Unity Extension project.
 
-- [Hazware Unity Extensions blog post](http://buksbaum.us/2009/02/08/type-tracking-extension-for-unity/)
+- [Hazware Unity Extensions](http://buksbaum.us/things-i-did/hazware-unity-typetracking/)
 - [Dave's blog](http://buksbaum.us/)
+
+__Version X.Y - mm/dd/yyyy__
+  * Updated the home page link in readme and nuget packages
 
 __Version 2.2 - 05/18/2012__
   * Updated NUnit to 2.6
