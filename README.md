@@ -6,6 +6,13 @@ This is the repository for the Hazware Unity Extension project.
 - [Hazware Unity Extensions blog post](http://buksbaum.us/2009/02/08/type-tracking-extension-for-unity/)
 - [Dave's blog](http://buksbaum.us/)
 
+__Version 2.2 - 05/18/2012__
+  * Updated NUnit to 2.6
+  * Minor project file updates to support TeamCity CI
+  * Cleaned up AssemblyInfo
+  * Modified .gitignore to support NuGet PackageRestore
+  * Deprecated psake build scripts. These will be removed in the next release.
+
 __Version 2.1 - 08/16/2011__
   * Cleaned up source tree
   * Added psake build script
