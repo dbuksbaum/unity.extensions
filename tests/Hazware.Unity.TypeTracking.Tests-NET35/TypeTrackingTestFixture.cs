@@ -30,8 +30,18 @@ namespace Hazware.Unity.TypeTracking.Tests
     }
     #endregion
 
-    #region TryResolveUnknown
-    [Test]
+	#region Register FactoryInjection
+	[Test]
+	public void RegisterFactoryInjection()
+	{
+		Assert.DoesNotThrow(new TestDelegate(() => {
+			_container.RegisterType<ITest>(new InjectionFactory(c => new TestClass()));
+		}));
+	}
+	#endregion
+
+	#region TryResolveUnknown
+	[Test]
     public void TryResolveOfUnknownType()
     {
       ITest obj = _container.Configure<TypeTrackingExtension>().TryResolve<ITest>();
