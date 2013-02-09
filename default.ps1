@@ -21,7 +21,7 @@ properties {
   $v4_net_version = (ls "$env:windir\Microsoft.NET\Framework\v4.0*").Name
   $project_base = "$src_dir\$sln_base"
   $test_base = "tests\$sln_base.Tests"
-  $nunit_dir = "..\..\..\packages\NUnit.2.5.10.11092\tools"
+  $nunit_dir = "..\..\..\packages\NUnit.Runners.2.6.2\tools"
 
   $project_dlls = @( "Hazware.Unity.TypeTracking.dll" );
   $test_dlls = @("Hazware.Unity.TypeTracking.Tests.dll" );

@@ -51,9 +51,10 @@ namespace Hazware.Unity.TypeTracking
     {
       HashSet<string> names;
       string name = string.IsNullOrEmpty(e.Name) ? string.Empty : e.Name;
-      if (!_registeredTypes.TryGetValue(e.TypeFrom, out names))
+	  Type type = e.TypeFrom ?? e.TypeTo;
+      if (!_registeredTypes.TryGetValue(type, out names))
       { //  not found, so add it
-        _registeredTypes.Add(e.TypeFrom, new HashSet<string>(new string[] { name }));
+        _registeredTypes.Add(type, new HashSet<string>(new string[] { name }));
       }
       else
       { //  already added type, so add name
